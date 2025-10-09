@@ -1,1 +1,22 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+## 🧩 Core Features
+
+### 🎯 MVP Goals
+- Multilingual support (English, Japanese, Nepali)
+- Real-time chat interface using Turbo Streams + Stimulus
+- AI integration (OpenAI GPT-4 / LangChain.rb)
+- Retrieval-Augmented Generation (RAG) for local knowledge answers
+- User authentication with Devise
+- Admin panel for uploading and managing local documents (immigration, healthcare, taxes)
+- AI explanation of uploaded documents (key info, urgency, next steps)
+- PostgreSQL + pgvector for embeddings and similarity search
+- Tailwind CSS for responsive, polished UI
+- Optional Google Calendar sync for deadlines
+
+---
+
+### ✅ Deliverables
+- Working multilingual AI assistant for expats in Japan
+- Context-aware document understanding using RAG + GPT
+- Real-time chat interface with modern Rails stack (Hotwire + Tailwind)
+- Clean UI and polished GitHub documentation
+
