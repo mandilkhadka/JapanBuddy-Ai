@@ -1,3 +1,4 @@
+
 ## 🧩 Core Features
 
 ### 🎯 MVP Goals
@@ -20,3 +21,5 @@
 - Real-time chat interface with modern Rails stack (Hotwire + Tailwind)
 - Clean UI and polished GitHub documentation
 
+
+<img width="800" height="800" alt="japanbuddy" src="https://github.com/user-attachments/assets/37ba4680-fcd2-4533-b913-5ba05f3b21b3" />
