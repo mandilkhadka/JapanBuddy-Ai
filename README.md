@@ -1,157 +1,220 @@
-## 🚀 Project: **Expat Helper AI**
+# JapanBuddy AI
 
-**Goal:** A multilingual Rails-based AI assistant that helps foreigners in Japan with everyday questions (immigration, health insurance, taxes, local services) .A Rails app for expats in Japan: upload official documents (bills, city hall notices, immigration letters) → AI extracts key info, classifies it, explains in plain English, and highlights urgency + next steps. Optional: syncs deadlines into Google Calendar.
+Your friendly AI assistant for navigating life in Japan. Get instant answers about visas, taxes, health insurance, and more — in English, Japanese, or Nepali.
 
-**Stack:** Ruby on Rails 7, PostgreSQL + pgvector, Hotwire (Turbo + Stimulus), Tailwind, OpenAI API, Langchain.rb.
-
----
-
-## 🗓️ 14-Day Roadmap (MVP Phase)
+![JapanBuddy AI](https://img.shields.io/badge/Rails-7.1-red) ![Ruby](https://img.shields.io/badge/Ruby-3.2+-red) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-blue) ![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
 
-### **WEEK 1 — Core Structure + AI Foundations**
+## Features
+
+### AI-Powered Chat
+- **Multilingual Support** — Ask questions in English, Japanese (日本語), or Nepali (नेपाली)
+- **Context-Aware Responses** — Uses RAG (Retrieval Augmented Generation) to provide accurate, document-backed answers
+- **Real-time Chat** — Powered by Hotwire (Turbo Streams) for instant message updates
+- **Smart Suggestions** — Quick-start prompts to help users get started
+
+### Document Analysis
+- **Upload Official Documents** — PDF and TXT file support
+- **Automatic Processing** — Documents are chunked and embedded using pgvector
+- **Plain Language Explanations** — Get clear explanations of complex Japanese documents
+- **Knowledge Base** — Build your personal knowledge base for better AI responses
+
+### Topics Covered
+- **Immigration & Visas** — Residence card renewals, visa status changes, work permits
+- **Health Insurance** — National Health Insurance (NHI), Shakai Hoken, using Japanese healthcare
+- **Taxes & Pension** — Filing tax returns, nenmatsu chosei, pension refunds for leaving Japan
+- **Daily Life** — Setting up utilities, bank accounts, city hall procedures
+
+### User Experience
+- **Responsive Design** — Works on desktop and mobile
+- **Dark/Light Mode** — Toggle between themes
+- **Language Switcher** — Switch interface language instantly (EN/JP/NE)
+- **Conversation History** — Access your previous chats anytime
 
 ---
 
-### 🧩 **Day 1: Setup & Scaffolding**
+## Tech Stack
 
-- Initialize Rails 7 app (`rails new expat_helper_ai --css=tailwind`)
-- Configure Postgres & environment variables
-- Add gems:
-    
-    ```ruby
-    gem "ruby-openai"
-    gem "langchainrb"
-    gem "pgvector"
-    gem "devise"
-    gem "hotwire-rails"
-    
-    ```
-    
-- Setup GitHub repo, `.env`, and README with project description
-
-✅ **Deliverable:** Base app running locally, connected to database.
+| Category | Technology |
+|----------|------------|
+| **Framework** | Ruby on Rails 7.1 |
+| **Database** | PostgreSQL 15+ with pgvector |
+| **Frontend** | Hotwire (Turbo + Stimulus), Tailwind CSS |
+| **AI/ML** | OpenAI API, Langchain.rb |
+| **Authentication** | Devise |
+| **File Storage** | ActiveStorage |
 
 ---
 
-### 💬 **Day 2: Authentication + Basic UI**
+## Getting Started
 
-- Add `User` model via Devise
-- Simple navbar: Home / Chat / About
-- Implement Tailwind layout
-- Add language switcher dropdown (English, 日本語, नेपाली)
+### Prerequisites
 
-✅ **Deliverable:** Working auth + multilingual layout.
+- Ruby 3.2+
+- PostgreSQL 15+ with pgvector extension
+- Node.js 18+
+- OpenAI API key
 
----
+### Installation
 
-### 🧠 **Day 3: AI Chat Interface (Hotwire)**
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/mandilkhadka/JapanBuddy-Ai.git
+   cd JapanBuddy-Ai
+   ```
 
-- Create `ChatController` and `ChatMessage` model
-- Use Turbo Streams to append messages dynamically
-- Create Stimulus controller for auto-scroll
-- Basic AI response integration (OpenAI completion API)
+2. **Install dependencies**
+   ```bash
+   bundle install
+   yarn install
+   ```
 
-✅ **Deliverable:** Real-time AI chat working end-to-end.
+3. **Setup environment variables**
+   ```bash
+   cp .env.example .env
+   ```
 
----
+   Add your API keys to `.env`:
+   ```
+   OPENAI_API_KEY=your_openai_api_key
+   DATABASE_URL=postgres://localhost/japanbuddy_development
+   ```
 
-### 📚 **Day 4: Knowledge Base Model**
+4. **Setup the database**
+   ```bash
+   rails db:create
+   rails db:migrate
+   rails db:seed
+   ```
 
-- Add `Document` and `Chunk` models
-- Enable ActiveStorage for uploading PDF/TXT files
-- Parse uploads into small “chunks” (~300 tokens each)
-- Generate embeddings for each chunk and store in pgvector column
+5. **Start the server**
+   ```bash
+   bin/dev
+   ```
 
-✅ **Deliverable:** Admin can upload docs, embeddings stored in DB.
-
----
-
-### ⚙️ **Day 5: Context Retrieval (RAG)**
-
-- Create a service `AiAnswerService`
-- Implement vector similarity search to find relevant chunks
-- Merge context with user query → send to GPT
-- Display contextual answers in chat interface
-
-✅ **Deliverable:** Context-aware AI replies from uploaded data.
-
----
-
-### 🌍 **Day 6: Multilingual Support**
-
-- Integrate OpenAI translation for user queries
-- Let user select interface language (i18n + dropdown)
-- AI replies in selected language
-- Add localization for nav, buttons, labels
-
-✅ **Deliverable:** Multilingual chat fully working.
+6. **Visit the app**
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-### 🧪 **Day 7: Testing + Seed Data**
+## Project Structure
 
-- Add 2–3 example docs (e.g., “Residency Guide.pdf”, “Health Insurance.pdf”)
-- Test context retrieval (ask: “How to renew residence card?”)
-- Write initial RSpec tests for AiAnswerService
-- Push to GitHub with clean commits and demo video (optional)
-
-✅ **Deliverable:** Week 1 MVP completed 🎯
-
----
-
-### **WEEK 2 — UX, Insights & Community Layer**
-
----
-
-### 📈 **Day 8: Dashboard & Analytics**
-
-- Create `Admin::DashboardController`
-- Display usage stats: number of questions, top queries
-- Simple charts using Chartkick
-- Store question + AI response in DB for tracking
-
-✅ **Deliverable:** Analytics dashboard for insights.
-
----
-
-### 💬 **Day 9: FAQ & Quick Prompts**
-
-- Add sidebar of “Popular Questions” (seeded from usage logs)
-- Allow one-click insert into chat input
-- Add “regenerate answer” button via Stimulus
-
-✅ **Deliverable:** Better UX & interaction flow.
+```
+app/
+├── controllers/
+│   ├── conversations_controller.rb    # Chat management
+│   ├── chat_messages_controller.rb    # Message handling
+│   ├── documents_controller.rb        # Document uploads
+│   └── pages_controller.rb            # Static pages
+├── models/
+│   ├── user.rb                        # User authentication
+│   ├── conversation.rb                # Chat conversations
+│   ├── chat_message.rb                # Individual messages
+│   ├── document.rb                    # Uploaded documents
+│   └── chunk.rb                       # Document chunks with embeddings
+├── services/
+│   ├── ai_answer_service.rb           # RAG-powered AI responses
+│   ├── embedding_service.rb           # Vector embeddings
+│   └── document_processor_service.rb  # Document chunking
+├── javascript/controllers/
+│   ├── chat_controller.js             # Chat interactions
+│   ├── dropdown_controller.js         # Dropdown menus
+│   └── theme_controller.js            # Dark/light mode
+└── views/
+    ├── pages/home.html.erb            # Landing page
+    ├── conversations/                  # Chat views
+    └── documents/                      # Document views
+```
 
 ---
 
-### 🗂️ **Day 10: Community Knowledge Base (Optional but Valuable)**
+## Internationalization (i18n)
 
-- Add `CommunityTip` model (title, content, user_id)
-- Allow logged-in users to share helpful info (“How I renewed my visa in Saitama”)
-- AI can cite community tips in answers
+JapanBuddy supports three languages:
 
-✅ **Deliverable:** Adds social/community impact dimension.
+| Language | Code | File |
+|----------|------|------|
+| English | `en` | `config/locales/en.yml` |
+| Japanese | `ja` | `config/locales/ja.yml` |
+| Nepali | `ne` | `config/locales/ne.yml` |
 
----
-
-### 🎨 **Day 11: UI/UX Polish**
-
-- Chat bubbles with Tailwind
-- Add icons for AI vs. User messages
-- Responsive layout for mobile
-- Add loading animation while AI is “thinking”
-- Add light/dark mode toggle
-
-✅ **Deliverable:** Polished, demo-ready UI.
+To add a new language, create a new YAML file in `config/locales/` and add the locale to the application configuration.
 
 ---
 
-### 🔍 **Day 12: API Integration (Optional)**
+## API Integration
 
-- Integrate Google Maps API for local search (e.g., “nearest ward office”)
-- Integrate Add to Calendar Button to set the payment date or paypay
-- Optional: Add button for “Find on Map”
+### OpenAI
+The app uses OpenAI's API for:
+- **Chat Completions** — GPT-4 for generating responses
+- **Embeddings** — text-embedding-ada-002 for document vectors
 
-✅ **Deliverable:** Adds business + data depth (if time allows).
+### RAG (Retrieval Augmented Generation)
+1. User asks a question
+2. Question is converted to an embedding vector
+3. Similar document chunks are retrieved using pgvector
+4. Context + question is sent to GPT-4
+5. AI generates a contextual, accurate response
+
+---
+
+## Screenshots
+
+### Home Page
+The landing page introduces JapanBuddy's features with a clean, modern design.
+
+### Chat Interface
+Real-time AI chat with message history, suggestions, and multilingual support.
+
+### Document Upload
+Upload PDFs or paste text to build your knowledge base.
+
+---
+
+## Roadmap
+
+- [x] Core AI chat functionality
+- [x] Document upload and processing
+- [x] RAG-powered responses
+- [x] Multilingual support (EN/JP/NE)
+- [x] Dark/light mode
+- [x] Responsive design
+- [ ] Google Calendar integration for deadlines
+- [ ] Community tips sharing
+- [ ] Admin analytics dashboard
+- [ ] Mobile app (React Native)
+
+---
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## Acknowledgments
+
+- Built for expats navigating life in Japan
+- Powered by OpenAI's GPT-4 and embedding models
+- UI inspired by modern SaaS applications
+
+---
+
+## Contact
+
+**Mandil Khadka** — [@mandilkhadka](https://github.com/mandilkhadka)
+
+Project Link: [https://github.com/mandilkhadka/JapanBuddy-Ai](https://github.com/mandilkhadka/JapanBuddy-Ai)

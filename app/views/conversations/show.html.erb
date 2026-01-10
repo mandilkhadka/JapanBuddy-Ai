@@ -1,0 +1,71 @@
+<% content_for :body_class, "chat-page" %>
+
+<div class="chat-layout">
+  <aside class="chat-sidebar">
+    <div class="sidebar-header">
+      <h2><%= t('chat.conversations') %></h2>
+      <%= button_to conversations_path, method: :post, class: "btn-new-chat" do %>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+        <%= t('chat.new_conversation') %>
+      <% end %>
+    </div>
+
+    <div class="conversations-list" id="conversations-list">
+      <% current_user.conversations.recent.limit(20).each do |conv| %>
+        <%= render partial: 'conversation_item', locals: { conversation: conv, active: conv.id == @conversation.id } %>
+      <% end %>
+    </div>
+  </aside>
+
+  <div class="chat-main" data-controller="chat">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <h1><%= @conversation.display_title %></h1>
+        <span class="chat-lang"><%= Conversation::SUPPORTED_LANGUAGES[@conversation.language] %></span>
+      </div>
+      <%= button_to conversation_path(@conversation), method: :delete, class: "btn-delete", data: { turbo_confirm: t('documents.delete_confirm') } do %>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+        </svg>
+      <% end %>
+    </div>
+
+    <div class="chat-messages" id="messages" data-chat-target="messages">
+      <% if @messages.empty? %>
+        <div class="chat-welcome">
+          <div class="welcome-avatar">JB</div>
+          <div class="welcome-content">
+            <p class="welcome-title"><%= t('chat.welcome') %></p>
+            <p><%= t('chat.welcome_message', default: t('chat.welcome_hint')) %></p>
+            <p class="welcome-hint"><%= t('chat.welcome_hint') %></p>
+            <div class="welcome-suggestions">
+              <% (t('chat.suggestions') rescue []).each do |suggestion| %>
+                <button class="suggestion" data-action="click->chat#insertSuggestion" data-text="<%= suggestion %>"><%= suggestion %></button>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <% @messages.each do |message| %>
+          <%= render partial: 'chat_messages/message', locals: { message: message } %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div id="loading-indicator" class="chat-loading hidden">
+      <div class="loading-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <span><%= t('chat.thinking') %></span>
+    </div>
+
+    <div class="chat-input-container">
+      <%= form_with url: conversation_chat_messages_path(@conversation), method: :post, data: { controller: "message-form", action: "turbo:submit-start->message-form#showLoading turbo:submit-end->message-form#hideLoading" }, class: "chat-form" do |f| %>
+        <%= f.text_field :content, placeholder: t('chat.placeholder'), class: "chat-input", autocomplete: "off", data: { message_form_target: "input", action: "keydown.enter->message-form#submit", chat_target: "input" } %>
+        <%= f.submit t('chat.send'), class: "btn-send" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,2 +1,141 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% content_for :body_class, "home-page" %>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      <%= t('home.badge') %>
+    </div>
+
+    <h1 class="hero-title">
+      <%= t('home.hero_title') %>
+    </h1>
+
+    <p class="hero-description">
+      <%= t('home.hero_subtitle') %>
+    </p>
+
+    <div class="hero-actions">
+      <% if user_signed_in? %>
+        <%= link_to conversations_path, class: "btn-primary" do %>
+          <%= t('home.get_started') %>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        <% end %>
+      <% else %>
+        <%= link_to new_user_registration_path, class: "btn-primary" do %>
+          <%= t('nav.sign_up') %>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        <% end %>
+        <%= link_to t('home.learn_more'), "#how-it-works", class: "btn-secondary" %>
+      <% end %>
+    </div>
+
+    <div class="hero-languages">
+      <span class="lang-label"><%= t('home.trusted_by') %></span>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="chat-preview">
+      <div class="chat-header-preview">
+        <div class="chat-avatar">JB</div>
+        <span>JapanBuddy</span>
+      </div>
+      <div class="chat-messages-preview">
+        <div class="msg msg-user"><%= t('chat.suggestions').first rescue "How do I renew my residence card?" %></div>
+        <div class="msg msg-ai">
+          <strong>Here's what you need:</strong><br><br>
+          1. Application form (在留期間更新許可申請書)<br>
+          2. Your passport + current residence card<br>
+          3. 4x3cm photo taken within 3 months<br>
+          4. ¥4,000 revenue stamp<br><br>
+          Apply 3 months before expiry at your local Immigration Bureau.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works" class="features-section">
+  <div class="section-header">
+    <span class="section-tag"><%= t('home.features_title') %></span>
+    <h2><%= t('home.features_subtitle') %></h2>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon" style="--accent: #3b82f6;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3"/>
+        </svg>
+      </div>
+      <h3><%= t('home.features.immigration.title') %></h3>
+      <p><%= t('home.features.immigration.description') %></p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon" style="--accent: #10b981;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4.8 2.3A.3.3 0 1 0 5 2.9a.3.3 0 1 0-.2-.6zm5 0A.3.3 0 1 0 10 2.9a.3.3 0 1 0-.2-.6zm5 0A.3.3 0 1 0 15 2.9a.3.3 0 1 0-.2-.6zM4.8 7.3A.3.3 0 1 0 5 7.9a.3.3 0 1 0-.2-.6zm5 0A.3.3 0 1 0 10 7.9a.3.3 0 1 0-.2-.6zm5 0A.3.3 0 1 0 15 7.9a.3.3 0 1 0-.2-.6zM4.8 12.3A.3.3 0 1 0 5 12.9a.3.3 0 1 0-.2-.6zm5 0a.3.3 0 1 0 .2.6.3.3 0 1 0-.2-.6zm5 0a.3.3 0 1 0 .2.6.3.3 0 1 0-.2-.6z"/>
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+        </svg>
+      </div>
+      <h3><%= t('home.features.insurance.title') %></h3>
+      <p><%= t('home.features.insurance.description') %></p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon" style="--accent: #f59e0b;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+        </svg>
+      </div>
+      <h3><%= t('home.features.taxes.title') %></h3>
+      <p><%= t('home.features.taxes.description') %></p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon" style="--accent: #8b5cf6;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+      </div>
+      <h3><%= t('home.features.documents.title') %></h3>
+      <p><%= t('home.features.documents.description') %></p>
+    </div>
+  </div>
+</section>
+
+<section class="use-cases-section">
+  <div class="section-header">
+    <span class="section-tag"><%= t('home.use_cases_title') %></span>
+    <h2><%= t('home.use_cases_subtitle') %></h2>
+  </div>
+
+  <div class="use-cases-grid">
+    <% (t('home.use_cases') rescue []).each do |use_case| %>
+      <div class="use-case">
+        <span class="use-case-category"><%= use_case[:category] %></span>
+        <p>"<%= use_case[:question] %>"</p>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-content">
+    <h2><%= t('home.cta_title') %></h2>
+    <p><%= t('home.cta_subtitle') %></p>
+
+    <% if user_signed_in? %>
+      <%= link_to t('home.get_started'), conversations_path, class: "btn-primary btn-large" %>
+    <% else %>
+      <%= link_to t('nav.sign_up'), new_user_registration_path, class: "btn-primary btn-large" %>
+      <span class="cta-note"><%= t('home.cta_note') %></span>
+    <% end %>
+  </div>
+</section>

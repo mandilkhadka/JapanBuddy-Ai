@@ -1,0 +1,100 @@
+ja:
+  app_name: "JapanBuddy AI"
+  tagline: "日本生活をもっと簡単に"
+
+  nav:
+    home: "ホーム"
+    chat: "チャット"
+    documents: "書類"
+    sign_in: "ログイン"
+    sign_up: "無料で始める"
+    sign_out: "ログアウト"
+    language: "言語"
+    select_language: "言語を選択"
+    toggle_theme: "テーマ切替"
+    my_chats: "チャット履歴"
+    my_documents: "マイ書類"
+    menu: "メニュー"
+
+  home:
+    hero_title: "日本での生活、もう迷わない"
+    hero_subtitle: "ビザ申請から確定申告まで、英語・日本語・ネパール語で24時間いつでも質問できます。あなたの日本生活をAIがサポート。"
+    get_started: "チャットを始める"
+    learn_more: "詳しく見る"
+    badge: "AI搭載アシスタント"
+    trusted_by: "日本全国の外国人に信頼されています"
+    features_title: "必要なサポートがここに"
+    features_subtitle: "外国人が日本で直面する課題を、わかりやすく解説します"
+    features:
+      immigration:
+        title: "在留資格・ビザ"
+        description: "ビザの更新・変更、在留カード、就労許可について丁寧に説明します"
+      insurance:
+        title: "健康保険"
+        description: "国民健康保険、社会保険、日本の医療制度の使い方"
+      taxes:
+        title: "税金・年金"
+        description: "確定申告の方法、年末調整、外国人の税金について"
+      documents:
+        title: "書類サポート"
+        description: "届いた書類をアップロードして、内容をあなたの言語で確認"
+    use_cases_title: "よくある質問"
+    use_cases_subtitle: "他のユーザーはこんなことを聞いています"
+    use_cases:
+      - category: "在留資格"
+        question: "在留カードの更新手続きはどうすればいい？"
+      - category: "医療"
+        question: "病院から届いた請求書の内容を教えて"
+      - category: "税金"
+        question: "年末調整をした場合、確定申告は必要？"
+      - category: "生活"
+        question: "新しいアパートの電気・ガス・水道の契約方法は？"
+    cta_title: "さあ、始めましょう"
+    cta_subtitle: "日本で暮らす外国人の皆さんに選ばれています"
+    cta_note: "無料でご利用いただけます。クレジットカード不要。"
+
+  chat:
+    new_conversation: "新規チャット"
+    conversations: "チャット履歴"
+    no_conversations: "まだチャットがありません。日本生活について何でも聞いてください！"
+    placeholder: "ビザ、税金、医療について質問..."
+    send: "送信"
+    thinking: "考え中..."
+    welcome: "こんにちは！JapanBuddyです"
+    welcome_message: "入国管理、税金、医療、日常生活など、日本での生活に関することなら何でもお手伝いします！"
+    welcome_hint: "ビザの更新、健康保険、確定申告などについて聞いてみてください..."
+    suggestions:
+      - "在留カードの更新方法は？"
+      - "日本の健康保険について教えて"
+      - "外国人の税金について"
+      - "銀行口座の開設方法は？"
+
+  documents:
+    title: "アップロードした書類"
+    upload: "書類をアップロード"
+    no_documents: "まだ書類がありません。届いた手紙や請求書をアップロードすると、内容を説明します。"
+    upload_title: "書類をアップロード"
+    file_label: "ファイルを選択（PDF または TXT）"
+    content_label: "またはテキストを貼り付け"
+    content_hint: "ファイルをアップロードするか、テキストを直接貼り付けてください。内容を分析して説明します。"
+    submit: "アップロードして分析"
+    back: "書類一覧に戻る"
+    processing: "分析中..."
+    delete_confirm: "この書類を削除しますか？"
+    status:
+      pending: "待機中"
+      processing: "処理中"
+      completed: "完了"
+      failed: "失敗"
+
+  flash:
+    document_uploaded: "書類をアップロードしました。分析中..."
+    document_deleted: "書類を削除しました。"
+    conversation_deleted: "チャットを削除しました。"
+    welcome_back: "おかえりなさい！"
+    signed_out: "またのご利用をお待ちしています！"
+
+  errors:
+    generic: "エラーが発生しました。もう一度お試しください。"
+    not_found: "ページが見つかりません"
+    unauthorized: "ログインしてください"

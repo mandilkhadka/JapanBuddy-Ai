@@ -1,0 +1,16 @@
+<%= turbo_stream.append "messages" do %>
+  <%= render partial: 'chat_messages/message', locals: { message: @user_chat_message } %>
+<% end %>
+
+<%= turbo_stream.append "messages" do %>
+  <%= render partial: 'chat_messages/message', locals: { message: @ai_chat_message } %>
+<% end %>
+
+<%= turbo_stream.replace "loading-indicator" do %>
+  <div id="loading-indicator" class="chat-loading hidden">
+    <div class="loading-dots">
+      <span></span><span></span><span></span>
+    </div>
+    <span>Thinking...</span>
+  </div>
+<% end %>

@@ -1,0 +1,63 @@
+<div class="container mx-auto px-4 py-8 max-w-4xl">
+  <div class="mb-6">
+    <%= link_to "← Back to Documents", documents_path, class: "text-blue-600 hover:underline" %>
+  </div>
+
+  <div class="bg-white rounded-lg shadow-md p-6">
+    <div class="flex justify-between items-start mb-6">
+      <div>
+        <h1 class="text-2xl font-bold text-gray-800"><%= @document.title %></h1>
+        <div class="flex gap-3 mt-2">
+          <span class="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-800"><%= @document.file_type %></span>
+          <span class="px-2 py-1 text-xs rounded-full <%= @document.status == 'completed' ? 'bg-green-100 text-green-800' : @document.status == 'processing' ? 'bg-yellow-100 text-yellow-800' : @document.status == 'failed' ? 'bg-red-100 text-red-800' : 'bg-gray-100 text-gray-800' %>">
+            <%= @document.status.capitalize %>
+          </span>
+        </div>
+      </div>
+      <%= button_to document_path(@document), method: :delete, class: "text-red-500 hover:text-red-700", data: { confirm: "Delete this document?" } do %>
+        Delete Document
+      <% end %>
+    </div>
+
+    <div class="grid grid-cols-3 gap-4 mb-6 text-sm">
+      <div class="bg-gray-50 p-4 rounded-lg">
+        <p class="text-gray-500">Created</p>
+        <p class="font-semibold"><%= @document.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+      </div>
+      <div class="bg-gray-50 p-4 rounded-lg">
+        <p class="text-gray-500">Chunks</p>
+        <p class="font-semibold"><%= @document.chunks.count %></p>
+      </div>
+      <div class="bg-gray-50 p-4 rounded-lg">
+        <p class="text-gray-500">Content Length</p>
+        <p class="font-semibold"><%= @document.content.to_s.length %> chars</p>
+      </div>
+    </div>
+
+    <% if @document.content.present? %>
+      <div class="border-t pt-6">
+        <h2 class="text-lg font-semibold text-gray-800 mb-3">Content Preview</h2>
+        <div class="bg-gray-50 rounded-lg p-4 max-h-96 overflow-y-auto">
+          <pre class="whitespace-pre-wrap text-sm text-gray-700"><%= truncate(@document.content, length: 3000) %></pre>
+        </div>
+      </div>
+    <% end %>
+
+    <% if @document.chunks.any? %>
+      <div class="border-t pt-6 mt-6">
+        <h2 class="text-lg font-semibold text-gray-800 mb-3">Document Chunks (<%= @document.chunks.count %>)</h2>
+        <div class="space-y-3">
+          <% @document.chunks.ordered.limit(5).each do |chunk| %>
+            <div class="bg-gray-50 rounded-lg p-3">
+              <p class="text-xs text-gray-500 mb-1">Chunk #<%= chunk.position + 1 %></p>
+              <p class="text-sm text-gray-700"><%= truncate(chunk.content, length: 200) %></p>
+            </div>
+          <% end %>
+          <% if @document.chunks.count > 5 %>
+            <p class="text-sm text-gray-500 text-center">... and <%= @document.chunks.count - 5 %> more chunks</p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

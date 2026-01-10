@@ -1,0 +1,49 @@
+<div class="docs-page">
+  <div class="docs-header">
+    <h1><%= t('documents.title') %></h1>
+    <%= link_to new_document_path, class: "btn-primary" do %>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12h14"/>
+      </svg>
+      <%= t('documents.upload') %>
+    <% end %>
+  </div>
+
+  <% if @documents.any? %>
+    <div class="docs-grid">
+      <% @documents.each do |document| %>
+        <%= link_to document_path(document), class: "doc-card" do %>
+          <div class="doc-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <div class="doc-info">
+            <h3><%= document.title %></h3>
+            <p><%= document.created_at.strftime("%b %d, %Y") %></p>
+          </div>
+          <div class="doc-meta">
+            <span class="doc-status <%= document.status %>"><%= t("documents.status.#{document.status}", default: document.status) %></span>
+            <span class="doc-chunks"><%= document.chunks.count %> chunks</span>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="empty-state">
+      <div class="empty-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+      </div>
+      <h3><%= t('documents.title') %></h3>
+      <p><%= t('documents.no_documents') %></p>
+      <%= link_to new_document_path, class: "btn-primary" do %>
+        <%= t('documents.upload') %>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      <% end %>
+    </div>
+  <% end %>
+</div>

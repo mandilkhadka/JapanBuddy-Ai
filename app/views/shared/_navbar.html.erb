@@ -1,38 +1,107 @@
-<nav class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+<header style="background:#fff;border-bottom:1px solid #e5e5e5;padding:0 24px;height:60px;display:flex !important;align-items:center;position:sticky;top:0;z-index:100;">
+  <div style="max-width:1200px;margin:0 auto;width:100%;display:flex !important;flex-direction:row !important;align-items:center;justify-content:space-between;">
+
+    <%# Logo %>
+    <%= link_to root_path, style: "display:flex;align-items:center;gap:10px;text-decoration:none;color:#111;flex-shrink:0;" do %>
+      <div style="width:32px;height:32px;background:linear-gradient(135deg,#2563eb,#7c3aed);border-radius:6px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:13px;">JB</div>
+      <span style="font-weight:700;font-size:18px;">JapanBuddy</span>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <%# Navigation Links - Center %>
+    <nav style="display:flex !important;flex-direction:row !important;align-items:center;gap:8px;margin-left:40px;">
+      <%= link_to root_path, style: "display:inline-flex;align-items:center;gap:6px;padding:8px 14px;color:#{current_page?(root_path) ? '#2563eb' : '#666'};background:#{current_page?(root_path) ? '#dbeafe' : 'transparent'};text-decoration:none;border-radius:6px;font-size:14px;font-weight:500;white-space:nowrap;" do %>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <%= t('nav.home') %>
+      <% end %>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
-          </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
+      <% if user_signed_in? %>
+        <%= link_to conversations_path, style: "display:inline-flex;align-items:center;gap:6px;padding:8px 14px;color:#{controller_name == 'conversations' ? '#2563eb' : '#666'};background:#{controller_name == 'conversations' ? '#dbeafe' : 'transparent'};text-decoration:none;border-radius:6px;font-size:14px;font-weight:500;white-space:nowrap;" do %>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <%= t('nav.chat') %>
         <% end %>
-      </ul>
+
+        <%= link_to documents_path, style: "display:inline-flex;align-items:center;gap:6px;padding:8px 14px;color:#{controller_name == 'documents' ? '#2563eb' : '#666'};background:#{controller_name == 'documents' ? '#dbeafe' : 'transparent'};text-decoration:none;border-radius:6px;font-size:14px;font-weight:500;white-space:nowrap;" do %>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <%= t('nav.documents') %>
+        <% end %>
+      <% end %>
+    </nav>
+
+    <%# Right Side Actions %>
+    <div style="display:flex !important;flex-direction:row !important;align-items:center;gap:12px;margin-left:auto;">
+      <%# Language Switcher %>
+      <div style="display:flex;align-items:center;gap:4px;">
+        <%= link_to "EN", url_for(locale: 'en'), style: "padding:6px 10px;font-size:13px;font-weight:#{I18n.locale == :en ? '600' : '400'};color:#{I18n.locale == :en ? '#2563eb' : '#666'};text-decoration:none;border-radius:4px;background:#{I18n.locale == :en ? '#dbeafe' : 'transparent'};", data: { turbo: false } %>
+        <%= link_to "JP", url_for(locale: 'ja'), style: "padding:6px 10px;font-size:13px;font-weight:#{I18n.locale == :ja ? '600' : '400'};color:#{I18n.locale == :ja ? '#2563eb' : '#666'};text-decoration:none;border-radius:4px;background:#{I18n.locale == :ja ? '#dbeafe' : 'transparent'};", data: { turbo: false } %>
+        <%= link_to "NE", url_for(locale: 'ne'), style: "padding:6px 10px;font-size:13px;font-weight:#{I18n.locale == :ne ? '600' : '400'};color:#{I18n.locale == :ne ? '#2563eb' : '#666'};text-decoration:none;border-radius:4px;background:#{I18n.locale == :ne ? '#dbeafe' : 'transparent'};", data: { turbo: false } %>
+      </div>
+
+      <% if user_signed_in? %>
+        <%# Theme Toggle %>
+        <button data-controller="theme" data-action="click->theme#toggle" style="width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;background:#f5f5f5;border:1px solid #e5e5e5;border-radius:6px;cursor:pointer;color:#666;">
+          <span data-theme-target="icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </span>
+        </button>
+
+        <%# User Dropdown %>
+        <div style="position:relative;" data-controller="dropdown">
+          <button data-action="click->dropdown#toggle" style="width:36px;height:36px;background:linear-gradient(135deg,#2563eb,#7c3aed);border:none;border-radius:50%;color:white;font-weight:600;font-size:14px;cursor:pointer;">
+            <%= current_user.email[0].upcase %>
+          </button>
+          <div data-dropdown-target="menu" class="user-dropdown-menu" style="position:absolute;top:100%;right:0;margin-top:8px;min-width:200px;background:white;border:1px solid #e5e5e5;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);padding:8px;display:none;z-index:1000;">
+            <div style="padding:10px 12px;border-bottom:1px solid #f0f0f0;margin-bottom:8px;">
+              <div style="font-weight:600;font-size:14px;color:#111;"><%= current_user.email.split('@').first %></div>
+              <div style="font-size:12px;color:#888;"><%= current_user.email %></div>
+            </div>
+            <%= link_to conversations_path, style: "display:flex;align-items:center;gap:8px;padding:8px 12px;color:#333;text-decoration:none;border-radius:4px;font-size:14px;" do %>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <%= t('nav.my_chats') %>
+            <% end %>
+            <%= link_to documents_path, style: "display:flex;align-items:center;gap:8px;padding:8px 12px;color:#333;text-decoration:none;border-radius:4px;font-size:14px;" do %>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <%= t('nav.my_documents') %>
+            <% end %>
+            <div style="height:1px;background:#f0f0f0;margin:8px 0;"></div>
+            <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, style: "display:flex;align-items:center;gap:8px;padding:8px 12px;color:#dc2626;text-decoration:none;border-radius:4px;font-size:14px;" do %>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              <%= t('nav.sign_out') %>
+            <% end %>
+          </div>
+        </div>
+      <% else %>
+        <%= link_to t('nav.sign_in'), new_user_session_path, style: "padding:8px 14px;color:#666;text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap;" %>
+        <%= link_to t('nav.sign_up'), new_user_registration_path, style: "padding:8px 16px;background:#2563eb;color:white;text-decoration:none;border-radius:6px;font-size:14px;font-weight:500;white-space:nowrap;" %>
+      <% end %>
     </div>
   </div>
-</nav>
+</header>
+
+<style>
+  .user-dropdown-menu.open {
+    display: block !important;
+  }
+  .user-dropdown-menu a:hover {
+    background: #f5f5f5;
+  }
+  [data-theme="dark"] header {
+    background: #1a1a1a !important;
+    border-color: #333 !important;
+  }
+  [data-theme="dark"] header a,
+  [data-theme="dark"] header span,
+  [data-theme="dark"] header button,
+  [data-theme="dark"] header div {
+    color: inherit;
+  }
+  [data-theme="dark"] .user-dropdown-menu {
+    background: #1a1a1a !important;
+    border-color: #333 !important;
+  }
+  [data-theme="dark"] .user-dropdown-menu a {
+    color: #f5f5f5 !important;
+  }
+  [data-theme="dark"] .user-dropdown-menu a:hover {
+    background: #333 !important;
+  }
+</style>
