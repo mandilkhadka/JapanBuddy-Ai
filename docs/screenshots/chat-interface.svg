@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="btnGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGrad2)"/>
+
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="280" height="800" fill="#0f172a"/>
+
+  <!-- Sidebar Header -->
+  <text x="20" y="40" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#fff">Your Conversations</text>
+
+  <!-- New Chat Button -->
+  <rect x="20" y="60" width="240" height="40" rx="8" fill="#1e293b" stroke="#334155"/>
+  <text x="110" y="85" font-family="system-ui, sans-serif" font-size="12" fill="#3b82f6" text-anchor="middle">+ New Chat</text>
+
+  <!-- Conversation List -->
+  <rect x="20" y="120" width="240" height="50" rx="8" fill="#3b82f6"/>
+  <text x="35" y="150" font-family="system-ui, sans-serif" font-size="12" fill="#fff">Visa renewal process</text>
+
+  <rect x="20" y="180" width="240" height="50" rx="8" fill="#1e293b"/>
+  <text x="35" y="210" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Health insurance questions</text>
+
+  <rect x="20" y="240" width="240" height="50" rx="8" fill="#1e293b"/>
+  <text x="35" y="270" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Tax filing 2024</text>
+
+  <rect x="20" y="300" width="240" height="50" rx="8" fill="#1e293b"/>
+  <text x="35" y="330" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Bank account setup</text>
+
+  <!-- Main Chat Area -->
+  <rect x="280" y="0" width="920" height="800" fill="#1e293b"/>
+
+  <!-- Chat Header -->
+  <rect x="280" y="0" width="920" height="64" fill="#0f172a"/>
+  <text x="310" y="40" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#fff">Visa renewal process</text>
+  <rect x="540" y="22" width="60" height="24" rx="12" fill="#334155"/>
+  <text x="555" y="39" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">English</text>
+
+  <!-- Messages Area -->
+  <!-- Welcome Message -->
+  <rect x="310" y="90" width="60" height="60" rx="12" fill="#3b82f6"/>
+  <text x="327" y="130" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#fff">JB</text>
+
+  <rect x="385" y="90" width="500" height="120" rx="12" fill="#334155"/>
+  <text x="405" y="120" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#fff">Hello! I'm JapanBuddy</text>
+  <text x="405" y="150" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">I can help you with immigration, taxes, healthcare, and daily life in Japan.</text>
+  <text x="405" y="175" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Ask me anything!</text>
+
+  <!-- Suggestion Chips -->
+  <rect x="405" y="230" width="200" height="32" rx="16" fill="#1e293b" stroke="#3b82f6"/>
+  <text x="420" y="252" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">How do I renew my residence card?</text>
+
+  <rect x="620" y="230" width="180" height="32" rx="16" fill="#1e293b" stroke="#3b82f6"/>
+  <text x="635" y="252" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">Explain Japanese health insurance</text>
+
+  <rect x="405" y="275" width="150" height="32" rx="16" fill="#1e293b" stroke="#3b82f6"/>
+  <text x="420" y="297" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">What taxes do foreigners pay?</text>
+
+  <rect x="570" y="275" width="160" height="32" rx="16" fill="#1e293b" stroke="#3b82f6"/>
+  <text x="585" y="297" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">How to open a bank account?</text>
+
+  <!-- User Message -->
+  <rect x="750" y="340" width="350" height="44" rx="12" fill="#3b82f6"/>
+  <text x="770" y="368" font-family="system-ui, sans-serif" font-size="13" fill="#fff">How do I renew my residence card before it expires?</text>
+
+  <!-- AI Response -->
+  <rect x="310" y="410" width="60" height="60" rx="12" fill="#3b82f6"/>
+  <text x="327" y="450" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#fff">JB</text>
+
+  <rect x="385" y="410" width="550" height="280" rx="12" fill="#334155"/>
+  <text x="405" y="445" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#fff">Here's what you need to renew your residence card:</text>
+
+  <text x="405" y="480" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">1. Application form (PDF)</text>
+  <text x="405" y="505" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">2. Your passport (current and previous if applicable)</text>
+  <text x="405" y="530" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">3. Current residence card</text>
+  <text x="405" y="555" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">4. 4cm x 3cm photo (taken within 3 months)</text>
+  <text x="405" y="580" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">5. Documents proving employment/enrollment</text>
+  <text x="405" y="605" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">6. 4,000 revenue stamp (fee)</text>
+
+  <text x="405" y="650" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Apply at your nearest Regional Immigration Bureau. You can apply</text>
+  <text x="405" y="670" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">up to 3 months before your current card expires.</text>
+
+  <!-- Input Area -->
+  <rect x="280" y="720" width="920" height="80" fill="#0f172a"/>
+  <rect x="310" y="740" width="770" height="44" rx="8" fill="#1e293b" stroke="#334155"/>
+  <text x="330" y="768" font-family="system-ui, sans-serif" font-size="13" fill="#64748b">Ask about visas, taxes, healthcare...</text>
+
+  <rect x="1100" y="740" width="70" height="44" rx="8" fill="url(#btnGrad2)"/>
+  <text x="1120" y="768" font-family="system-ui, sans-serif" font-size="13" fill="#fff">Send</text>
+</svg>

@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="btnGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGrad3)"/>
+
+  <!-- Navbar -->
+  <rect x="0" y="0" width="1200" height="64" fill="#0f172a" opacity="0.9"/>
+  <text x="40" y="40" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#fff">JapanBuddy AI</text>
+  <text x="900" y="40" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">Home</text>
+  <text x="970" y="40" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">Chat</text>
+  <text x="1030" y="40" font-family="system-ui, sans-serif" font-size="14" fill="#3b82f6" font-weight="500">Docs</text>
+
+  <!-- Page Header -->
+  <text x="60" y="130" font-family="system-ui, sans-serif" font-size="28" font-weight="bold" fill="#fff">Your Documents</text>
+
+  <rect x="1000" y="100" width="150" height="44" rx="8" fill="url(#btnGrad3)"/>
+  <text x="1020" y="128" font-family="system-ui, sans-serif" font-size="13" fill="#fff">+ Upload Document</text>
+
+  <!-- Document Cards Grid -->
+  <!-- Row 1 -->
+  <rect x="60" y="180" width="350" height="140" rx="12" fill="#1e293b" stroke="#334155"/>
+  <rect x="80" y="200" width="48" height="48" rx="8" fill="#334155"/>
+  <text x="95" y="232" font-family="system-ui, sans-serif" font-size="20" fill="#3b82f6">PDF</text>
+  <text x="145" y="220" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#fff">Hospital Bill - March 2024</text>
+  <text x="145" y="245" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Uploaded: Mar 15, 2024</text>
+  <rect x="80" y="280" width="60" height="24" rx="12" fill="#10b981" opacity="0.2"/>
+  <text x="90" y="297" font-family="system-ui, sans-serif" font-size="10" fill="#10b981">Ready</text>
+  <text x="320" y="297" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">12 chunks</text>
+
+  <rect x="430" y="180" width="350" height="140" rx="12" fill="#1e293b" stroke="#334155"/>
+  <rect x="450" y="200" width="48" height="48" rx="8" fill="#334155"/>
+  <text x="465" y="232" font-family="system-ui, sans-serif" font-size="20" fill="#3b82f6">PDF</text>
+  <text x="515" y="220" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#fff">Tax Notice - 2023</text>
+  <text x="515" y="245" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Uploaded: Feb 28, 2024</text>
+  <rect x="450" y="280" width="60" height="24" rx="12" fill="#10b981" opacity="0.2"/>
+  <text x="460" y="297" font-family="system-ui, sans-serif" font-size="10" fill="#10b981">Ready</text>
+  <text x="690" y="297" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">8 chunks</text>
+
+  <rect x="800" y="180" width="350" height="140" rx="12" fill="#1e293b" stroke="#334155"/>
+  <rect x="820" y="200" width="48" height="48" rx="8" fill="#334155"/>
+  <text x="835" y="232" font-family="system-ui, sans-serif" font-size="20" fill="#f59e0b">TXT</text>
+  <text x="885" y="220" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#fff">City Hall Letter</text>
+  <text x="885" y="245" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Uploaded: Jan 10, 2024</text>
+  <rect x="820" y="280" width="60" height="24" rx="12" fill="#10b981" opacity="0.2"/>
+  <text x="830" y="297" font-family="system-ui, sans-serif" font-size="10" fill="#10b981">Ready</text>
+  <text x="1060" y="297" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">5 chunks</text>
+
+  <!-- Row 2 -->
+  <rect x="60" y="340" width="350" height="140" rx="12" fill="#1e293b" stroke="#334155"/>
+  <rect x="80" y="360" width="48" height="48" rx="8" fill="#334155"/>
+  <text x="95" y="392" font-family="system-ui, sans-serif" font-size="20" fill="#3b82f6">PDF</text>
+  <text x="145" y="380" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#fff">Pension Documents</text>
+  <text x="145" y="405" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Uploaded: Dec 05, 2023</text>
+  <rect x="80" y="440" width="80" height="24" rx="12" fill="#f59e0b" opacity="0.2"/>
+  <text x="88" y="457" font-family="system-ui, sans-serif" font-size="10" fill="#f59e0b">Processing</text>
+  <text x="320" y="457" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">--</text>
+
+  <rect x="430" y="340" width="350" height="140" rx="12" fill="#1e293b" stroke="#334155"/>
+  <rect x="450" y="360" width="48" height="48" rx="8" fill="#334155"/>
+  <text x="465" y="392" font-family="system-ui, sans-serif" font-size="20" fill="#3b82f6">PDF</text>
+  <text x="515" y="380" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#fff">Insurance Card Info</text>
+  <text x="515" y="405" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Uploaded: Nov 20, 2023</text>
+  <rect x="450" y="440" width="60" height="24" rx="12" fill="#10b981" opacity="0.2"/>
+  <text x="460" y="457" font-family="system-ui, sans-serif" font-size="10" fill="#10b981">Ready</text>
+  <text x="690" y="457" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">15 chunks</text>
+
+  <rect x="800" y="340" width="350" height="140" rx="12" fill="#1e293b" stroke="#334155"/>
+  <rect x="820" y="360" width="48" height="48" rx="8" fill="#334155"/>
+  <text x="835" y="392" font-family="system-ui, sans-serif" font-size="20" fill="#3b82f6">PDF</text>
+  <text x="885" y="380" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#fff">Residence Card Copy</text>
+  <text x="885" y="405" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Uploaded: Oct 15, 2023</text>
+  <rect x="820" y="440" width="60" height="24" rx="12" fill="#10b981" opacity="0.2"/>
+  <text x="830" y="457" font-family="system-ui, sans-serif" font-size="10" fill="#10b981">Ready</text>
+  <text x="1060" y="457" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">3 chunks</text>
+
+  <!-- Info Text -->
+  <text x="60" y="550" font-family="system-ui, sans-serif" font-size="14" fill="#64748b">Upload official letters, bills, or forms to get explanations in your language.</text>
+  <text x="60" y="575" font-family="system-ui, sans-serif" font-size="14" fill="#64748b">Documents are processed and embedded for AI-powered answers.</text>
+
+  <!-- Footer Stats -->
+  <rect x="60" y="620" width="1090" height="100" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="100" y="665" font-family="system-ui, sans-serif" font-size="36" font-weight="bold" fill="#3b82f6">6</text>
+  <text x="100" y="690" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Documents</text>
+
+  <text x="300" y="665" font-family="system-ui, sans-serif" font-size="36" font-weight="bold" fill="#10b981">43</text>
+  <text x="300" y="690" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Total Chunks</text>
+
+  <text x="500" y="665" font-family="system-ui, sans-serif" font-size="36" font-weight="bold" fill="#8b5cf6">5</text>
+  <text x="500" y="690" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Ready</text>
+
+  <text x="700" y="665" font-family="system-ui, sans-serif" font-size="36" font-weight="bold" fill="#f59e0b">1</text>
+  <text x="700" y="690" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Processing</text>
+</svg>

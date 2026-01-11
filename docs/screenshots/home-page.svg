@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="btnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGrad)"/>
+
+  <!-- Navbar -->
+  <rect x="0" y="0" width="1200" height="64" fill="#0f172a" opacity="0.9"/>
+  <text x="40" y="40" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#fff">JapanBuddy AI</text>
+  <text x="900" y="40" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">Home</text>
+  <text x="970" y="40" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">Chat</text>
+  <text x="1030" y="40" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">Docs</text>
+  <rect x="1100" y="22" width="70" height="28" rx="6" fill="url(#btnGrad)"/>
+  <text x="1115" y="41" font-family="system-ui, sans-serif" font-size="12" fill="#fff">Sign Up</text>
+
+  <!-- Hero Section -->
+  <rect x="40" y="100" width="80" height="24" rx="12" fill="#1e40af" opacity="0.5"/>
+  <circle cx="52" cy="112" r="4" fill="#3b82f6"/>
+  <text x="62" y="117" font-family="system-ui, sans-serif" font-size="10" fill="#93c5fd">AI-Powered</text>
+
+  <text x="40" y="180" font-family="system-ui, sans-serif" font-size="48" font-weight="bold" fill="#fff">Navigate Japan</text>
+  <text x="40" y="240" font-family="system-ui, sans-serif" font-size="48" font-weight="bold" fill="#fff">with Confidence</text>
+
+  <text x="40" y="290" font-family="system-ui, sans-serif" font-size="16" fill="#94a3b8">From visa applications to tax returns, get instant answers</text>
+  <text x="40" y="315" font-family="system-ui, sans-serif" font-size="16" fill="#94a3b8">in English, Japanese, or Nepali. Your 24/7 AI companion.</text>
+
+  <rect x="40" y="350" width="160" height="48" rx="8" fill="url(#btnGrad)"/>
+  <text x="65" y="380" font-family="system-ui, sans-serif" font-size="14" font-weight="500" fill="#fff">Start Chatting</text>
+
+  <rect x="220" y="350" width="150" height="48" rx="8" fill="transparent" stroke="#475569" stroke-width="2"/>
+  <text x="245" y="380" font-family="system-ui, sans-serif" font-size="14" fill="#e2e8f0">Learn More</text>
+
+  <!-- Chat Preview Card -->
+  <rect x="650" y="100" width="480" height="380" rx="16" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+
+  <!-- Chat Header -->
+  <rect x="650" y="100" width="480" height="56" rx="16" fill="#334155"/>
+  <rect x="666" y="108" width="40" height="40" rx="8" fill="#3b82f6"/>
+  <text x="678" y="135" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#fff">JB</text>
+  <text x="720" y="133" font-family="system-ui, sans-serif" font-size="14" fill="#fff">JapanBuddy</text>
+
+  <!-- User Message -->
+  <rect x="850" y="180" width="260" height="48" rx="12" fill="#3b82f6"/>
+  <text x="865" y="210" font-family="system-ui, sans-serif" font-size="12" fill="#fff">How do I renew my residence card?</text>
+
+  <!-- AI Response -->
+  <rect x="670" y="250" width="340" height="200" rx="12" fill="#334155"/>
+  <text x="685" y="280" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#fff">Here's what you need:</text>
+  <text x="685" y="310" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">1. Application form</text>
+  <text x="685" y="335" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">2. Passport + residence card</text>
+  <text x="685" y="360" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">3. 4x3cm photo</text>
+  <text x="685" y="385" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">4. 4,000 revenue stamp</text>
+  <text x="685" y="420" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Apply 3 months before expiry at Immigration.</text>
+
+  <!-- Features Section -->
+  <text x="520" y="560" font-family="system-ui, sans-serif" font-size="12" fill="#3b82f6" text-anchor="middle">EVERYTHING YOU NEED</text>
+  <text x="600" y="600" font-family="system-ui, sans-serif" font-size="28" font-weight="bold" fill="#fff" text-anchor="middle">Get expert guidance on topics that matter</text>
+
+  <!-- Feature Cards -->
+  <rect x="80" y="650" width="220" height="100" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="100" y="690" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#fff">Immigration & Visas</text>
+  <text x="100" y="715" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Visa renewals, status changes,</text>
+  <text x="100" y="730" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">residence cards explained</text>
+
+  <rect x="330" y="650" width="220" height="100" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="350" y="690" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#fff">Health Insurance</text>
+  <text x="350" y="715" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">NHI, Shakai Hoken, using</text>
+  <text x="350" y="730" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Japanese healthcare</text>
+
+  <rect x="580" y="650" width="220" height="100" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="600" y="690" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#fff">Taxes & Finances</text>
+  <text x="600" y="715" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Filing returns, pension,</text>
+  <text x="600" y="730" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">tax obligations</text>
+
+  <rect x="830" y="650" width="220" height="100" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="850" y="690" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#fff">Document Help</text>
+  <text x="850" y="715" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Upload letters, get clear</text>
+  <text x="850" y="730" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">explanations in your language</text>
+</svg>

@@ -1,32 +1,38 @@
 # JapanBuddy AI
 
-Your friendly AI assistant for navigating life in Japan. Get instant answers about visas, taxes, health insurance, and more — in English, Japanese, or Nepali.
+**Your friendly AI assistant for navigating life in Japan.**
+
+> 🇺🇸 Get instant answers about visas, taxes, health insurance, and more — in English, Japanese, or Nepali.
+>
+> 🇯🇵 日本での生活をサポートするAIアシスタント。ビザ、税金、健康保険などの質問に即座に回答します。
+>
+> 🇳🇵 जापानमा बस्नेहरूको लागि AI सहायक। भिसा, कर, स्वास्थ्य बीमाको बारेमा तुरुन्तै जवाफ पाउनुहोस्।
 
 ![JapanBuddy AI](https://img.shields.io/badge/Rails-7.1-red) ![Ruby](https://img.shields.io/badge/Ruby-3.2+-red) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-blue) ![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
 
-## Features
+## Features / 機能 / विशेषताहरू
 
-### AI-Powered Chat
+### AI-Powered Chat / AIチャット / AI च्याट
 - **Multilingual Support** — Ask questions in English, Japanese (日本語), or Nepali (नेपाली)
 - **Context-Aware Responses** — Uses RAG (Retrieval Augmented Generation) to provide accurate, document-backed answers
 - **Real-time Chat** — Powered by Hotwire (Turbo Streams) for instant message updates
 - **Smart Suggestions** — Quick-start prompts to help users get started
 
-### Document Analysis
+### Document Analysis / 書類分析 / कागजात विश्लेषण
 - **Upload Official Documents** — PDF and TXT file support
 - **Automatic Processing** — Documents are chunked and embedded using pgvector
 - **Plain Language Explanations** — Get clear explanations of complex Japanese documents
 - **Knowledge Base** — Build your personal knowledge base for better AI responses
 
-### Topics Covered
+### Topics Covered / 対応トピック / समावेश विषयहरू
 - **Immigration & Visas** — Residence card renewals, visa status changes, work permits
 - **Health Insurance** — National Health Insurance (NHI), Shakai Hoken, using Japanese healthcare
 - **Taxes & Pension** — Filing tax returns, nenmatsu chosei, pension refunds for leaving Japan
 - **Daily Life** — Setting up utilities, bank accounts, city hall procedures
 
-### User Experience
+### User Experience / ユーザー体験 / प्रयोगकर्ता अनुभव
 - **Responsive Design** — Works on desktop and mobile
 - **Dark/Light Mode** — Toggle between themes
 - **Language Switcher** — Switch interface language instantly (EN/JP/NE)
@@ -129,15 +135,27 @@ app/
 
 ---
 
-## Internationalization (i18n)
+## Internationalization (i18n) / 多言語対応 / बहुभाषिक समर्थन
 
-JapanBuddy supports three languages:
+JapanBuddy supports three languages with full UI localization:
 
-| Language | Code | File |
-|----------|------|------|
-| English | `en` | `config/locales/en.yml` |
-| Japanese | `ja` | `config/locales/ja.yml` |
-| Nepali | `ne` | `config/locales/ne.yml` |
+| Language | Code | File | Native Name |
+|----------|------|------|-------------|
+| English | `en` | `config/locales/en.yml` | English |
+| Japanese | `ja` | `config/locales/ja.yml` | 日本語 |
+| Nepali | `ne` | `config/locales/ne.yml` | नेपाली |
+
+### Language Switcher / 言語切替 / भाषा परिवर्तन
+
+Users can switch languages instantly using the language dropdown in the navigation bar. The entire UI updates in real-time without page reload.
+
+**Example Use Cases in All Languages:**
+
+| Use Case | English | 日本語 | नेपाली |
+|----------|---------|--------|--------|
+| Asking about visa | "How do I extend my work visa?" | "就労ビザの延長方法は？" | "मेरो कार्य भिसा कसरी विस्तार गर्ने?" |
+| Health question | "Which hospital accepts foreign insurance?" | "外国の保険が使える病院は？" | "कुन अस्पताल विदेशी बीमा स्वीकार्छ?" |
+| Tax inquiry | "When is the tax filing deadline?" | "確定申告の締切はいつ？" | "कर फाइलिङको अन्तिम मिति कहिले हो?" |
 
 To add a new language, create a new YAML file in `config/locales/` and add the locale to the application configuration.
 
@@ -161,14 +179,100 @@ The app uses OpenAI's API for:
 
 ## Screenshots
 
-### Home Page
-The landing page introduces JapanBuddy's features with a clean, modern design.
+### Home Page / ホームページ / गृहपृष्ठ
+The landing page introduces JapanBuddy's features with a clean, modern design supporting dark mode.
 
-### Chat Interface
-Real-time AI chat with message history, suggestions, and multilingual support.
+![Home Page](docs/screenshots/home-page.svg)
 
-### Document Upload
-Upload PDFs or paste text to build your knowledge base.
+### Chat Interface / チャット画面 / च्याट इन्टरफेस
+Real-time AI chat with message history, quick suggestions, and multilingual support.
+
+![Chat Interface](docs/screenshots/chat-interface.svg)
+
+### Documents / 書類管理 / कागजात व्यवस्थापन
+Upload PDFs or paste text to build your personal knowledge base for AI-powered answers.
+
+![Documents Page](docs/screenshots/documents-page.svg)
+
+### Mobile View / モバイル表示 / मोबाइल दृश्य
+Fully responsive design that works seamlessly on mobile devices.
+
+![Mobile View](docs/screenshots/mobile-view.svg)
+
+---
+
+## UI Translations / UIの翻訳 / UI अनुवाद
+
+JapanBuddy supports **English**, **Japanese (日本語)**, and **Nepali (नेपाली)**. Here's how key UI elements appear in each language:
+
+### Navigation / ナビゲーション / नेभिगेसन
+
+| English | 日本語 (Japanese) | नेपाली (Nepali) |
+|---------|------------------|-----------------|
+| Home | ホーム | गृहपृष्ठ |
+| Chat | チャット | च्याट |
+| Documents | 書類 | कागजातहरू |
+| Sign In | ログイン | लग इन |
+| Sign Up | 無料で始める | निःशुल्क सुरु गर्नुहोस् |
+| Sign Out | ログアウト | लग आउट |
+| Language | 言語 | भाषा |
+| Menu | メニュー | मेनु |
+
+### Home Page / ホームページ / गृहपृष्ठ
+
+| English | 日本語 (Japanese) | नेपाली (Nepali) |
+|---------|------------------|-----------------|
+| Navigate Japan with Confidence | 日本での生活、もう迷わない | जापानमा जीवन अब सजिलो |
+| AI-Powered Assistant | AI搭載アシスタント | AI सहायक |
+| Start Chatting | チャットを始める | च्याट सुरु गर्नुहोस् |
+| Learn More | 詳しく見る | कसरी काम गर्छ हेर्नुहोस् |
+
+### Features / 機能 / विशेषताहरू
+
+| Feature | English | 日本語 | नेपाली |
+|---------|---------|--------|--------|
+| **Immigration** | Immigration & Visas | 在留資格・ビザ | भिसा र निवास |
+| **Health** | Health Insurance | 健康保険 | स्वास्थ्य बीमा |
+| **Taxes** | Taxes & Finances | 税金・年金 | कर र पेन्सन |
+| **Documents** | Document Help | 書類サポート | कागजात मद्दत |
+
+### Chat Interface / チャット / च्याट
+
+| English | 日本語 (Japanese) | नेपाली (Nepali) |
+|---------|------------------|-----------------|
+| New Chat | 新規チャット | नयाँ च्याट |
+| Your Conversations | チャット履歴 | च्याट इतिहास |
+| Send | 送信 | पठाउनुहोस् |
+| Thinking... | 考え中... | सोचिरहेको छ... |
+| Hello! I'm JapanBuddy | こんにちは！JapanBuddyです | नमस्ते! म JapanBuddy हुँ |
+
+### Quick Suggestions / クイック質問 / द्रुत प्रश्नहरू
+
+| English | 日本語 | नेपाली |
+|---------|--------|--------|
+| How do I renew my residence card? | 在留カードの更新方法は？ | निवास कार्ड कसरी नवीकरण गर्ने? |
+| Explain Japanese health insurance | 日本の健康保険について教えて | जापानको स्वास्थ्य बीमा बारे बताउनुहोस् |
+| What taxes do foreigners pay? | 外国人の税金について | विदेशीहरूले कति कर तिर्नुपर्छ? |
+| How to open a bank account? | 銀行口座の開設方法は？ | बैंक खाता कसरी खोल्ने? |
+
+### Documents / 書類 / कागजातहरू
+
+| English | 日本語 (Japanese) | नेपाली (Nepali) |
+|---------|------------------|-----------------|
+| Your Documents | アップロードした書類 | मेरा कागजातहरू |
+| Upload Document | 書類をアップロード | कागजात अपलोड |
+| Processing | 処理中 | प्रक्रियामा |
+| Ready | 完了 | तयार |
+| Upload & Analyze | アップロードして分析 | अपलोड गरी विश्लेषण गर्नुहोस् |
+
+### Common Phrases / よく使うフレーズ / सामान्य वाक्यहरू
+
+| English | 日本語 | नेपाली |
+|---------|--------|--------|
+| Welcome back! | おかえりなさい！ | फेरि स्वागत छ! |
+| See you next time! | またのご利用をお待ちしています！ | फेरि भेटौंला! |
+| Something went wrong | エラーが発生しました | केही समस्या भयो |
+| Please sign in | ログインしてください | कृपया लग इन गर्नुहोस् |
 
 ---
 
