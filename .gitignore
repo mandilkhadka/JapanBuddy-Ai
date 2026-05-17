@@ -45,3 +45,4 @@
 
 # Claude Code session state
 /.claude/
+/.playwright-mcp/

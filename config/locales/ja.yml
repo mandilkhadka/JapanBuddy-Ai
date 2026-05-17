@@ -49,6 +49,14 @@ ja:
         question: "年末調整をした場合、確定申告は必要？"
       - category: "生活"
         question: "新しいアパートの電気・ガス・水道の契約方法は？"
+    chat_preview:
+      intro: "必要なものはこちら："
+      body_html: |
+        1. 申請書（在留期間更新許可申請書）<br>
+        2. パスポートと現在の在留カード<br>
+        3. 3か月以内に撮影した4x3cmの写真<br>
+        4. 4,000円分の収入印紙<br><br>
+        有効期限の3か月前から、お住まいの地域の入国管理局で申請してください。
     cta_title: "さあ、始めましょう"
     cta_subtitle: "日本で暮らす外国人の皆さんに選ばれています"
     cta_note: "無料でご利用いただけます。クレジットカード不要。"
@@ -95,6 +103,7 @@ ja:
     chunks_section: "書類チャンク"
     chunk_number: "チャンク #%{n}"
     more_chunks: "... 他 %{count} 件のチャンク"
+    chunks_count: "%{count} チャンク"
     status:
       pending: "待機中"
       processing: "処理中"
@@ -112,3 +121,9 @@ ja:
     generic: "エラーが発生しました。もう一度お試しください。"
     not_found: "ページが見つかりません"
     unauthorized: "ログインしてください"
+
+  footer:
+    tagline: "在留外国人のための、在留外国人による"
+
+  time:
+    ago: "%{time}前"

@@ -12,23 +12,18 @@ class ConversationsController < ApplicationController
 
   def create
     @conversation = current_user.conversations.create!(
-      title: params[:title] || "New Conversation",
-      language: params[:language] || 'en'
+      title: params[:title] || I18n.t('chat.new_conversation_title', default: 'New Conversation'),
+      language: params[:language] || I18n.locale.to_s
     )
 
-    respond_to do |format|
-      format.html { redirect_to @conversation }
-      format.turbo_stream
-    end
+    redirect_to @conversation, status: :see_other
   end
 
   def destroy
     @conversation.destroy
-
-    respond_to do |format|
-      format.html { redirect_to conversations_path, notice: 'Conversation deleted.' }
-      format.turbo_stream
-    end
+    redirect_to conversations_path,
+                status: :see_other,
+                notice: t('flash.conversation_deleted')
   end
 
   private

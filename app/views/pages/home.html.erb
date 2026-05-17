@@ -48,12 +48,8 @@
       <div class="chat-messages-preview">
         <div class="msg msg-user"><%= t('chat.suggestions').first rescue "How do I renew my residence card?" %></div>
         <div class="msg msg-ai">
-          <strong>Here's what you need:</strong><br><br>
-          1. Application form (在留期間更新許可申請書)<br>
-          2. Your passport + current residence card<br>
-          3. 4x3cm photo taken within 3 months<br>
-          4. ¥4,000 revenue stamp<br><br>
-          Apply 3 months before expiry at your local Immigration Bureau.
+          <strong><%= t('home.chat_preview.intro') %></strong><br><br>
+          <%= sanitize(t('home.chat_preview.body_html'), tags: %w[br]) %>
         </div>
       </div>
     </div>

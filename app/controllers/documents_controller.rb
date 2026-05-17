@@ -16,8 +16,10 @@ class DocumentsController < ApplicationController
     @document = current_user.documents.new(document_params)
 
     if @document.save
-      ProcessDocumentJob.perform_later(@document.id) if @document.file.attached?
-      redirect_to documents_path, notice: 'Document uploaded successfully. Processing...'
+      if @document.file.attached? || @document.content.present?
+        ProcessDocumentJob.perform_later(@document.id)
+      end
+      redirect_to documents_path, notice: t('flash.document_uploaded')
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,7 +27,7 @@ class DocumentsController < ApplicationController
 
   def destroy
     @document.destroy
-    redirect_to documents_path, notice: 'Document deleted.'
+    redirect_to documents_path, notice: t('flash.document_deleted')
   end
 
   private

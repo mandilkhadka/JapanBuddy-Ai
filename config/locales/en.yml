@@ -49,6 +49,14 @@ en:
         question: "Do I need to file a tax return if my company does nenmatsu chosei?"
       - category: "Daily Life"
         question: "How do I set up utilities in my new apartment?"
+    chat_preview:
+      intro: "Here's what you need:"
+      body_html: |
+        1. Application form (在留期間更新許可申請書)<br>
+        2. Your passport + current residence card<br>
+        3. 4x3cm photo taken within 3 months<br>
+        4. ¥4,000 revenue stamp<br><br>
+        Apply 3 months before expiry at your local Immigration Bureau.
     cta_title: "Ready to Get Started?"
     cta_subtitle: "Join thousands of expats who use JapanBuddy to navigate life in Japan"
     cta_note: "Free to use. No credit card required."
@@ -95,6 +103,7 @@ en:
     chunks_section: "Document Chunks"
     chunk_number: "Chunk #%{n}"
     more_chunks: "... and %{count} more chunks"
+    chunks_count: "%{count} chunks"
     status:
       pending: "Pending"
       processing: "Processing"
@@ -112,3 +121,9 @@ en:
     generic: "Something went wrong. Please try again."
     not_found: "Page not found"
     unauthorized: "Please sign in to continue"
+
+  footer:
+    tagline: "Built for expats, by expats"
+
+  time:
+    ago: "%{time} ago"
