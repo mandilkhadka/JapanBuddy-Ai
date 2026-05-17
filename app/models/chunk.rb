@@ -18,10 +18,10 @@ class Chunk < ApplicationRecord
     nil
   end
 
-  def self.search_similar(query_embedding, limit: 5)
-    # Simple cosine similarity search using Ruby
-    # For production with large datasets, use pgvector
-    chunks_with_scores = all.includes(:document).map do |chunk|
+  def self.search_similar(query_embedding, user:, limit: 5)
+    scope = joins(:document).where(documents: { user_id: user.id }).includes(:document)
+
+    chunks_with_scores = scope.map do |chunk|
       next nil if chunk.embedding.blank?
 
       score = cosine_similarity(query_embedding, chunk.embedding)
@@ -34,7 +34,7 @@ class Chunk < ApplicationRecord
       .map(&:first)
   rescue StandardError => e
     Rails.logger.warn "Similarity search failed: #{e.message}"
-    order(created_at: :desc).limit(limit)
+    scope.order(created_at: :desc).limit(limit)
   end
 
   private

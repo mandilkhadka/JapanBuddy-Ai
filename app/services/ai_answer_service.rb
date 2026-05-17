@@ -71,10 +71,11 @@ class AiAnswerService
   private
 
   def retrieve_relevant_context(query)
-    return '' unless Chunk.exists?
+    user = @conversation.user
+    return '' unless Chunk.joins(:document).where(documents: { user_id: user.id }).exists?
 
     query_embedding = @embedding_service.generate(query)
-    relevant_chunks = Chunk.search_similar(query_embedding, limit: MAX_CONTEXT_CHUNKS)
+    relevant_chunks = Chunk.search_similar(query_embedding, user: user, limit: MAX_CONTEXT_CHUNKS)
 
     return '' if relevant_chunks.empty?
 
