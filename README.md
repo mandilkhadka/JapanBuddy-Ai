@@ -182,22 +182,22 @@ The app uses OpenAI's API for:
 ### Home Page / ホームページ / गृहपृष्ठ
 The landing page introduces JapanBuddy's features with a clean, modern design supporting dark mode.
 
-![Home Page](docs/screenshots/home-page.svg)
+![Home Page](docs/screenshots/home-page.png)
 
 ### Chat Interface / チャット画面 / च्याट इन्टरफेस
 Real-time AI chat with message history, quick suggestions, and multilingual support.
 
-![Chat Interface](docs/screenshots/chat-interface.svg)
+![Chat Interface](docs/screenshots/chat-interface.png)
 
 ### Documents / 書類管理 / कागजात व्यवस्थापन
 Upload PDFs or paste text to build your personal knowledge base for AI-powered answers.
 
-![Documents Page](docs/screenshots/documents-page.svg)
+![Documents Page](docs/screenshots/documents-page.png)
 
 ### Mobile View / モバイル表示 / मोबाइल दृश्य
 Fully responsive design that works seamlessly on mobile devices.
 
-![Mobile View](docs/screenshots/mobile-view.svg)
+![Mobile View](docs/screenshots/mobile-view.png)
 
 ---
 
