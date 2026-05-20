@@ -1,9 +1,6 @@
 // Custom styles for JapanBuddy AI
-// A human-crafted design system
 
-// ========================================
 // Variables
-// ========================================
 :root {
   --color-bg: #fafafa;
   --color-surface: #ffffff;
@@ -18,6 +15,12 @@
   --color-success: #059669;
   --color-warning: #d97706;
   --color-error: #dc2626;
+
+  --color-btn-solid-bg: #1a1a1a;
+  --color-btn-solid-bg-hover: #333333;
+  --color-btn-solid-text: #ffffff;
+  --color-danger-soft-bg: #fef2f2;
+  --color-neutral-soft-bg: #f5f5f5;
 
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
@@ -50,14 +53,18 @@
   --color-warning: #f59e0b;
   --color-error: #ef4444;
 
+  --color-btn-solid-bg: #3b82f6;
+  --color-btn-solid-bg-hover: #2563eb;
+  --color-btn-solid-text: #ffffff;
+  --color-danger-soft-bg: rgba(239, 68, 68, 0.15);
+  --color-neutral-soft-bg: #252525;
+
   --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
   --shadow-lg: 0 12px 40px rgba(0,0,0,0.5);
 }
 
-// ========================================
 // Base styles
-// ========================================
 * {
   box-sizing: border-box;
 }
@@ -71,16 +78,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-// ========================================
 // Buttons
-// ========================================
 .btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 12px 24px;
-  background: var(--color-text);
-  color: white;
+  background: var(--color-btn-solid-bg);
+  color: var(--color-btn-solid-text);
   font-weight: 500;
   font-size: 15px;
   border-radius: var(--radius-md);
@@ -90,10 +95,10 @@ body {
   transition: all var(--transition);
 
   &:hover {
-    background: #333;
+    background: var(--color-btn-solid-bg-hover);
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
-    color: white;
+    color: var(--color-btn-solid-text);
     text-decoration: none;
   }
 
@@ -138,9 +143,7 @@ body {
   font-size: 16px;
 }
 
-// ========================================
 // Hero Section
-// ========================================
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -302,8 +305,8 @@ body {
 }
 
 .msg-user {
-  background: var(--color-text);
-  color: white;
+  background: var(--color-btn-solid-bg);
+  color: var(--color-btn-solid-text);
   align-self: flex-end;
   border-bottom-right-radius: 4px;
 }
@@ -315,9 +318,7 @@ body {
   border-bottom-left-radius: 4px;
 }
 
-// ========================================
 // Features Section
-// ========================================
 .features-section {
   max-width: 1200px;
   margin: 0 auto;
@@ -406,9 +407,7 @@ body {
   }
 }
 
-// ========================================
 // Use Cases Section
-// ========================================
 .use-cases-section {
   background: var(--color-surface);
   padding: 100px 40px;
@@ -460,9 +459,7 @@ body {
   }
 }
 
-// ========================================
 // CTA Section
-// ========================================
 .cta-section {
   padding: 120px 40px;
   text-align: center;
@@ -497,9 +494,7 @@ body {
   }
 }
 
-// ========================================
 // Navbar
-// ========================================
 .navbar {
   position: sticky;
   top: 0;
@@ -772,9 +767,7 @@ body {
   }
 }
 
-// ========================================
 // Footer
-// ========================================
 .site-footer {
   background: var(--color-surface);
   border-top: 1px solid var(--color-border-light);
@@ -823,9 +816,7 @@ body {
   margin: 0;
 }
 
-// ========================================
 // Chat Page Layout
-// ========================================
 .chat-page {
   main {
     height: calc(100vh - 64px);
@@ -881,8 +872,8 @@ body {
   align-items: center;
   gap: 6px;
   padding: 8px 14px;
-  background: var(--color-text);
-  color: white;
+  background: var(--color-btn-solid-bg);
+  color: var(--color-btn-solid-text);
   font-size: 13px;
   font-weight: 500;
   border: none;
@@ -891,7 +882,7 @@ body {
   transition: all var(--transition);
 
   &:hover {
-    background: #333;
+    background: var(--color-btn-solid-bg-hover);
   }
 }
 
@@ -1012,7 +1003,7 @@ body {
   transition: all var(--transition);
 
   &:hover {
-    background: #fef2f2;
+    background: var(--color-danger-soft-bg);
     color: var(--color-error);
   }
 }
@@ -1072,8 +1063,8 @@ body {
     flex-direction: row-reverse;
 
     .message-bubble {
-      background: var(--color-text);
-      color: white;
+      background: var(--color-btn-solid-bg);
+      color: var(--color-btn-solid-text);
       border-bottom-right-radius: 4px;
     }
 
@@ -1271,8 +1262,8 @@ body {
 
 .btn-send {
   padding: 14px 24px;
-  background: var(--color-text);
-  color: white;
+  background: var(--color-btn-solid-bg);
+  color: var(--color-btn-solid-text);
   font-size: 14px;
   font-weight: 500;
   border: none;
@@ -1281,13 +1272,11 @@ body {
   transition: all var(--transition);
 
   &:hover {
-    background: #333;
+    background: var(--color-btn-solid-bg-hover);
   }
 }
 
-// ========================================
 // Documents Page
-// ========================================
 .docs-page {
   max-width: 1000px;
   margin: 0 auto;
@@ -1524,8 +1513,8 @@ body {
 .btn-submit {
   width: 100%;
   padding: 14px;
-  background: var(--color-text);
-  color: white;
+  background: var(--color-btn-solid-bg);
+  color: var(--color-btn-solid-text);
   font-size: 15px;
   font-weight: 500;
   border: none;
@@ -1534,7 +1523,7 @@ body {
   transition: all var(--transition);
 
   &:hover {
-    background: #333;
+    background: var(--color-btn-solid-bg-hover);
   }
 }
 
@@ -1610,7 +1599,7 @@ body {
   .empty-icon {
     width: 80px;
     height: 80px;
-    background: #f5f5f5;
+    background: var(--color-neutral-soft-bg);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1638,14 +1627,14 @@ body {
 // Form Errors
 .form-errors {
   padding: 16px;
-  background: #fef2f2;
-  border: 1px solid #fecaca;
+  background: var(--color-danger-soft-bg);
+  border: 1px solid color-mix(in srgb, var(--color-error) 35%, transparent);
   border-radius: var(--radius-md);
   margin-bottom: 24px;
 
   p {
     margin: 0;
-    color: #991b1b;
+    color: var(--color-error);
     font-size: 14px;
 
     &:not(:last-child) {
@@ -1654,9 +1643,7 @@ body {
   }
 }
 
-// ========================================
 // Auth Pages
-// ========================================
 .auth-page {
   min-height: calc(100vh - 64px);
   display: flex;
