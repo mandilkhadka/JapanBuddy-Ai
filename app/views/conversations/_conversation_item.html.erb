@@ -6,6 +6,6 @@
   </div>
   <div class="conversation-info">
     <span class="conversation-title"><%= conversation.display_title %></span>
-    <span class="conversation-time"><%= time_ago_in_words(conversation.updated_at) %> ago</span>
+    <span class="conversation-time"><%= t('time.ago', time: time_ago_in_words(conversation.updated_at)) %></span>
   </div>
 <% end %>

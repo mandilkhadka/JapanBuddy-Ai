@@ -49,6 +49,14 @@ en:
         question: "Do I need to file a tax return if my company does nenmatsu chosei?"
       - category: "Daily Life"
         question: "How do I set up utilities in my new apartment?"
+    chat_preview:
+      intro: "Here's what you need:"
+      body_html: |
+        1. Application form (在留期間更新許可申請書)<br>
+        2. Your passport + current residence card<br>
+        3. 4x3cm photo taken within 3 months<br>
+        4. ¥4,000 revenue stamp<br><br>
+        Apply 3 months before expiry at your local Immigration Bureau.
     cta_title: "Ready to Get Started?"
     cta_subtitle: "Join thousands of expats who use JapanBuddy to navigate life in Japan"
     cta_note: "Free to use. No credit card required."
@@ -80,7 +88,22 @@ en:
     submit: "Upload & Analyze"
     back: "Back to Documents"
     processing: "Analyzing..."
+    delete: "Delete Document"
     delete_confirm: "Are you sure you want to delete this document?"
+    title_placeholder: "e.g., Residence Card Renewal Guide"
+    content_placeholder: "Paste document content here..."
+    click_to_upload: "Click to upload"
+    drag_drop: "or drag and drop"
+    file_size_hint: "PDF or TXT up to 10MB"
+    created: "Created"
+    chunks: "Chunks"
+    content_length: "Content Length"
+    chars: "chars"
+    content_preview: "Content Preview"
+    chunks_section: "Document Chunks"
+    chunk_number: "Chunk #%{n}"
+    more_chunks: "... and %{count} more chunks"
+    chunks_count: "%{count} chunks"
     status:
       pending: "Pending"
       processing: "Processing"
@@ -98,3 +121,38 @@ en:
     generic: "Something went wrong. Please try again."
     not_found: "Page not found"
     unauthorized: "Please sign in to continue"
+
+  footer:
+    tagline: "Built for expats, by expats"
+
+  auth:
+    sign_in_title: "Welcome back"
+    sign_in_subtitle: "Sign in to continue to JapanBuddy"
+    sign_in_submit: "Sign in"
+    sign_up_title: "Create your account"
+    sign_up_subtitle: "Start getting help with life in Japan"
+    sign_up_submit: "Create account"
+    email_placeholder: "you@example.com"
+    password_placeholder: "Your password"
+    password_create_placeholder: "Create a password"
+    password_confirm_placeholder: "Confirm your password"
+    password_min_chars: "%{count} characters minimum"
+    remember_me: "Remember me"
+    no_account_prompt: "Don't have an account?"
+    have_account_prompt: "Already have an account?"
+    sign_in_link: "Sign in"
+    sign_up_link: "Sign up"
+    forgot_password: "Forgot your password?"
+    edit_title: "Edit your account"
+    update_submit: "Update"
+    password_change_hint: "Leave blank to keep the same password"
+    current_password_hint: "We need your current password to confirm changes"
+    awaiting_confirmation: "Currently waiting confirmation for: %{email}"
+    cancel_account_title: "Cancel my account"
+    cancel_account_unhappy: "Unhappy?"
+    cancel_account_button: "Cancel my account"
+    cancel_account_confirm: "Are you sure?"
+    back: "Back"
+
+  time:
+    ago: "%{time} ago"

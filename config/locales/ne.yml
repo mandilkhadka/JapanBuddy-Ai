@@ -49,6 +49,14 @@ ne:
         question: "कम्पनीले नेनमात्सु चोसेइ गरेमा पनि कर फाइल गर्नुपर्छ?"
       - category: "दैनिक जीवन"
         question: "नयाँ अपार्टमेन्टमा बिजुली-पानी-ग्यास कसरी जोड्ने?"
+    chat_preview:
+      intro: "तपाईंलाई चाहिने कुराहरू:"
+      body_html: |
+        1. आवेदन फारम (在留期間更新許可申請書)<br>
+        2. राहदानी र हालको निवास कार्ड<br>
+        3. ३ महिनाभित्र खिचिएको ४x३ सेमी फोटो<br>
+        4. ¥4,000 राजस्व टिकट<br><br>
+        म्याद सकिनुभन्दा ३ महिना अघि आफ्नो स्थानीय इमिग्रेसन ब्यूरोमा आवेदन दिनुहोस्।
     cta_title: "सुरु गर्न तयार?"
     cta_subtitle: "जापानमा बस्ने हजारौं नेपालीहरूले प्रयोग गर्ने"
     cta_note: "निःशुल्क। क्रेडिट कार्ड चाहिँदैन।"
@@ -80,7 +88,22 @@ ne:
     submit: "अपलोड गरी विश्लेषण गर्नुहोस्"
     back: "कागजातहरूमा फर्कनुहोस्"
     processing: "विश्लेषण गर्दै..."
+    delete: "कागजात मेट्नुहोस्"
     delete_confirm: "यो कागजात मेट्ने हो?"
+    title_placeholder: "उदाहरण: निवास कार्ड नवीकरण गाइड"
+    content_placeholder: "यहाँ कागजातको सामग्री टाँस्नुहोस्..."
+    click_to_upload: "अपलोड गर्न क्लिक गर्नुहोस्"
+    drag_drop: "वा यहाँ तान्नुहोस्"
+    file_size_hint: "PDF वा TXT (१० MB सम्म)"
+    created: "सिर्जना मिति"
+    chunks: "खण्डहरू"
+    content_length: "सामग्री लम्बाइ"
+    chars: "अक्षर"
+    content_preview: "सामग्री पूर्वावलोकन"
+    chunks_section: "कागजात खण्डहरू"
+    chunk_number: "खण्ड #%{n}"
+    more_chunks: "... र %{count} अरू खण्डहरू"
+    chunks_count: "%{count} खण्डहरू"
     status:
       pending: "पर्खिरहेको"
       processing: "प्रक्रियामा"
@@ -98,3 +121,38 @@ ne:
     generic: "केही समस्या भयो। फेरि प्रयास गर्नुहोस्।"
     not_found: "पृष्ठ भेटिएन"
     unauthorized: "कृपया लग इन गर्नुहोस्"
+
+  footer:
+    tagline: "विदेशी बासिन्दाहरूका लागि, विदेशी बासिन्दाहरूद्वारा"
+
+  auth:
+    sign_in_title: "फेरि स्वागत छ"
+    sign_in_subtitle: "JapanBuddy मा जारी राख्न लग इन गर्नुहोस्"
+    sign_in_submit: "लग इन"
+    sign_up_title: "खाता खोल्नुहोस्"
+    sign_up_subtitle: "जापानमा जीवनको सहायता सुरु गर्नुहोस्"
+    sign_up_submit: "खाता बनाउनुहोस्"
+    email_placeholder: "you@example.com"
+    password_placeholder: "तपाईंको पासवर्ड"
+    password_create_placeholder: "पासवर्ड बनाउनुहोस्"
+    password_confirm_placeholder: "पासवर्ड पुष्टि गर्नुहोस्"
+    password_min_chars: "कम्तीमा %{count} अक्षर"
+    remember_me: "मलाई सम्झनुहोस्"
+    no_account_prompt: "खाता छैन?"
+    have_account_prompt: "पहिले नै खाता छ?"
+    sign_in_link: "लग इन"
+    sign_up_link: "खाता खोल्नुहोस्"
+    forgot_password: "पासवर्ड बिर्सनुभयो?"
+    edit_title: "खाता सम्पादन"
+    update_submit: "अद्यावधिक"
+    password_change_hint: "परिवर्तन नगर्ने भए खाली छोड्नुहोस्"
+    current_password_hint: "परिवर्तन पुष्टि गर्न हालको पासवर्ड चाहिन्छ"
+    awaiting_confirmation: "हाल %{email} को पुष्टि कुरिँदै"
+    cancel_account_title: "खाता रद्द गर्नुहोस्"
+    cancel_account_unhappy: "खुसी हुनुहुन्न?"
+    cancel_account_button: "खाता रद्द गर्नुहोस्"
+    cancel_account_confirm: "के तपाईं निश्चित हुनुहुन्छ?"
+    back: "पछाडि"
+
+  time:
+    ago: "%{time} अघि"

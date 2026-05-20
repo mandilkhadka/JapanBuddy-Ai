@@ -24,7 +24,7 @@
           </div>
           <div class="doc-meta">
             <span class="doc-status <%= document.status %>"><%= t("documents.status.#{document.status}", default: document.status) %></span>
-            <span class="doc-chunks"><%= document.chunks.count %> chunks</span>
+            <span class="doc-chunks"><%= t('documents.chunks_count', count: document.chunks.count) %></span>
           </div>
         <% end %>
       <% end %>
